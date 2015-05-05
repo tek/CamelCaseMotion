@@ -155,7 +155,7 @@ function! s:CreateMotionMappings()
     " endif
 
     for l:mode in ['n', 'o', 'v']
-	for l:motion in ['w', 'b', 'e']
+	for l:motion in ['w', 'b', 'e', 'ge']
 	    let l:targetMapping = '<Plug>CamelCaseMotion_' . l:motion
 	    execute l:mode . 'noremap <silent> ' . l:targetMapping . ' :<C-U>call camelcasemotion#Motion(''' . l:motion . ''',v:count1,''' . l:mode . ''')<CR>'
 	    if ! hasmapto(l:targetMapping, l:mode)
@@ -185,7 +185,7 @@ function! s:CreateInnerMotionMappings()
     " endif
 
     for l:mode in ['o', 'v']
-	for l:motion in ['w', 'b', 'e']
+	for l:motion in ['w', 'b', 'e', 'ge']
 	    let l:targetMapping = '<Plug>CamelCaseMotion_i' . l:motion
 	    execute l:mode . 'noremap <silent> ' . l:targetMapping . ' :<C-U>call camelcasemotion#InnerMotion(''' . l:motion . ''',v:count1)<CR>'
 	    if ! hasmapto(l:targetMapping, l:mode)
